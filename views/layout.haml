@@ -8,7 +8,7 @@
     %script{:type => "text/javascript", :src => "/js/jquery-1.4.4.min.js"}
     :javascript
       $(function () {
-      	$(".mati_check").click(function () {
+      	$("#mati_check").click(function () {
       		$.post("/ajax.json",
       		{
       			tehai : $("#tehai_text").val()
