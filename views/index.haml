@@ -1,5 +1,20 @@
+:javascript
+  function changeSelection(form, selection) {
+    form.tehai.value = selection.value;
+  }
 %div#tehai
   %form{:action => '/', :method => 'POST'}
+    待牌例
+    %br
+    %select{:name => "example", :size => 4, :onclick => 'changeSelection(this.form, this)'}
+      %option 1112224588899
+      %option 1112223335559
+      %option 1223344888999
+      %option 1112345678999
+    %br
+    %br
+    入力
+    %br
     %input{:type => 'text', :name => 'tehai', :id => 'tehai_text', :value => h(@tehai)}
     %input{:type => 'submit', :id => 'mati_check', :value => 'check'}
 %div#mati
