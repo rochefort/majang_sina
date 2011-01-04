@@ -1,0 +1,8 @@
+%div#tehai
+  %form{:action => '/', :method => 'POST'}
+    %input{:type => 'text', :name => 'tehai', :id => 'tehai_text', :value => h(@tehai)}
+    %input{:type => 'submit', :id => 'mati_check', :value => 'check'}
+%div#mati
+  = find_and_preserve do
+    %textarea{:id => "mati_area"}
+      = h(@tenpai)

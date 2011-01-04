@@ -1,0 +1,29 @@
+!!! XML
+!!! Strict
+
+%html
+  %head
+    %title majang
+    %link{:rel => "stylesheet", :type => "text/css", :href => "/base.css"}
+    %script{:type => "text/javascript", :src => "/js/jquery-1.4.4.min.js"}
+    :javascript
+      $(function () {
+      	$(".mati_check").click(function () {
+      		$.post("/ajax.json",
+      		{
+      			tehai : $("#tehai_text").val()
+      		},
+      		displayData);
+      		return false;
+      	});
+      });
+      function displayData(data) {
+        var res = "";
+        $.each(data, function(){
+      	  res = res + this;
+        });
+        $("#mati_area").html(res);
+      }
+  %body
+    %h1 チンイツ待ち検索(<a href="http://www.itmedia.co.jp/enterprise/articles/1004/03/news002.html">元ネタ</a>)
+    = yield
